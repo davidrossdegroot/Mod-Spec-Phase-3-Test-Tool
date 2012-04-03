@@ -1,0 +1,21 @@
+<h1>Test</h1>
+
+<p>
+  <b>Pass</b><br>
+  <%= @query.pass %>
+</p>
+
+<p>
+  <b>Tests</b><br>
+  <%= @query.test_id %>
+</p>
+
+<p>
+  <b>Directaddress</b><br>
+  <%= @query.DirectAddress %>
+</p>
+
+<div class="form-actions">
+    <%= link_to 'New Test', new_query_path, :class => 'btn btn-primary' %>  
+    <%= link_to 'Home', queries_path, :class => 'btn'  %>
+</div>

@@ -1,0 +1,25 @@
+<%= form_for @query, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Query</legend>
+    <div class="control-group">
+        <%= f.label :Test, :class => 'control-label' %>
+        <div class="controls">
+        <%= select("query", "test_id", Test.all.collect {|t| 
+        [ t.purpose, t.id ] }) %>
+        </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :DirectAddress, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :DirectAddress, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Run Test', :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', queries_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
+

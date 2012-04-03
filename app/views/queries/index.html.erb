@@ -1,0 +1,26 @@
+<h1>Test the System as Certificate Host</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pass/Fail</th>
+      <th>Direct Address</th>
+      <th>Test ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queries.each do |query| %>
+      <tr>
+        <td><%= query.id %></td>
+        <td><%= query.pass %></td>
+        <td><%= query.DirectAddress %></td>
+        <td><%= query.test.TcId %></td>
+        <td>
+          <%= link_to 'Destroy', query_path(query), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Test', new_query_path %>

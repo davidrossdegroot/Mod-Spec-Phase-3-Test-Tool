@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  purpose: MyString
+  steps: MyText
+  TcId: MyString
+  script: MyText
+
+two:
+  purpose: MyString
+  steps: MyText
+  TcId: MyString
+  script: MyText

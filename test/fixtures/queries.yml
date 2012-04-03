@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  DirectAddress: MyString
+  pass: false
+  test: 
+
+two:
+  DirectAddress: MyString
+  pass: false
+  test: 
