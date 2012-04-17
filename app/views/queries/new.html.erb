@@ -2,9 +2,9 @@
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Query</legend>
     <div class="control-group">
-        <%= f.label :Test, :class => 'control-label' %>
+        <%= f.label :Testcase, :class => 'control-label' %>
         <div class="controls">
-        <%= select("query", "test_id", Test.all.collect {|t| 
+        <%= select("query", "testcase_id", Testcase.all.collect {|t| 
         [ t.purpose, t.id ] }) %>
         </div>
     </div>

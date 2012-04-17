@@ -1,7 +1,7 @@
 TestTool::Application.routes.draw do
   get "home/index"
 
-  resources :tests
+  resources :testcases
   resources :queries
 
   # The priority is based upon order of creation:

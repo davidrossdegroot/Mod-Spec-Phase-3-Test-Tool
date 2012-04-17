@@ -5,8 +5,7 @@ class QueriesController < ApplicationController
     #I'm not sure we should show all the queries that have been run... 
     #If we don't show them, though, how will people know which ones they've done?
     #Best idea is to add a login.
-    @queries = Query.includes(:test).all
-
+    @queries = Query.includes(:testcase).all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @queries }
@@ -43,9 +42,8 @@ class QueriesController < ApplicationController
   # POST /queries
   # POST /queries.json
   def create
-    #make this "run" instead of "create". Change all of the code to be how it takes 
-    #the email and passes it into the right script for the test
     @query = Query.new(params[:query])
+    
     respond_to do |format|
       if @query.save
         format.html { redirect_to @query, :notice => 'Certificate was successfully located. Test Passed.' }
@@ -54,7 +52,7 @@ class QueriesController < ApplicationController
         format.html { render :action => "new" }
         format.json { render :json => @query.errors, :status => :unprocessable_entity }
       end
-    end
+      end
   end
    def destroy
     @query = Query.find(params[:id])

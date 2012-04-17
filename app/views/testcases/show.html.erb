@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Purpose:</b>
+  <%= @testcase.purpose %>
+</p>
+
+<p>
+  <b>Steps:</b>
+  <%= @testcase.steps %>
+</p>
+
+<p>
+  <b>Tcid:</b>
+  <%= @testcase.TcId %>
+</p>
+
+<p>
+  <b>Script:</b>
+  <%= @testcase.script %>
+</p>
+
+
+<%= link_to 'Edit', edit_testcase_path(@testcase) %> |
+<%= link_to 'Back', testcases_path %>

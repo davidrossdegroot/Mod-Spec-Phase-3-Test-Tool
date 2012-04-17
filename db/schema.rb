@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402213230) do
+ActiveRecord::Schema.define(:version => 20120417224950) do
 
   create_table "queries", :force => true do |t|
     t.string   "DirectAddress"
@@ -19,17 +19,21 @@ ActiveRecord::Schema.define(:version => 20120402213230) do
     t.integer  "test_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "testcase_id"
   end
 
   add_index "queries", ["test_id"], :name => "index_queries_on_test_id"
+  add_index "queries", ["testcase_id"], :name => "index_queries_on_testcase_id"
 
-  create_table "tests", :force => true do |t|
+  create_table "testcases", :force => true do |t|
     t.string   "purpose"
     t.text     "steps"
     t.string   "TcId"
     t.text     "script"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "testcase_id"
+    t.string   "expected_result"
   end
 
 end

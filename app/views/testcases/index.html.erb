@@ -1,0 +1,28 @@
+<h1>Tests</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Purpose</th>
+      <th>Steps</th>
+      <th>Script</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @testcases.each do |testcase| %>
+      <tr>
+        <td><%= testcase.id %></td>
+        <td><%= link_to testcase.purpose, testcase_path(testcase) %></td>
+        <td><%= testcase.steps %></td>
+        <td><%= testcase.script %></td>
+        <td>
+          <%= link_to 'Edit', edit_testcase_path(testcase), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', testcase_path(testcase), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_testcase_path, :class => 'btn btn-primary' %>
