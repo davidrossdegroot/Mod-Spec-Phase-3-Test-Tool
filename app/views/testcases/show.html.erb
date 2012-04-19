@@ -16,8 +16,16 @@
 </p>
 
 <p>
-  <b>Script:</b>
-  <%= @testcase.script %>
+  <b>Script(s):</b>
+  <ol>
+    <% for script in @testcase.scripts %>
+    <li><%=h script.script %>
+        <ul>
+        <li><%= script.expectedResult %></li>
+        </ul>
+    </li>
+    <% end %>
+</ol>
 </p>
 
 

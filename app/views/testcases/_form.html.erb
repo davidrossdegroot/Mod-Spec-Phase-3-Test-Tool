@@ -18,22 +18,11 @@
       </div>
     </div>
 
-    <div class="control-group">
-      <%= f.label :script, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_area :script, :class => 'text_area' %>
-        <p class="help-block">Each script will contain a variable for a domain name, an email address, or an email formatted as a domain name.
- If the script requires a DNS formatted email address, please use "~dnsemail". 
-If the script requires just the domain name, use "~domain". If the script requires the 
-full email address, use "~email". Example script for a domain name: "dig ~domain"</p>
-        </div>
-    </div>
-  <div class="control-group">
-      <%= f.label :expected_result, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :expected_result, :class => 'text_field' %>
+     <div class="control-group">
+      <%= f.fields_for :scripts do |builder| %>
+      <%= render 'script_fields', :f => builder %>
+      <% end %>
       </div>
-    </div>
 
     <div class="control-group">
       <%= f.label :TcId, :class => 'control-label' %>

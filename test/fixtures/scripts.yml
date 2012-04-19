@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  script: MyText
+  expectedResult: MyText
+  testcase_id: 1
+
+two:
+  script: MyText
+  expectedResult: MyText
+  testcase_id: 1

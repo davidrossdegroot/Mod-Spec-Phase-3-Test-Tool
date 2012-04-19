@@ -2,12 +2,11 @@ class Query < ActiveRecord::Base
   belongs_to :testcase
   validates :DirectAddress, :presence => {
   :message => "Please enter a Direct Address." }
-  after_validation :parse_script_and_add_parameter
-  #, :run_script
+  #after_validation :parse_script_and_add_parameter, :run_script
     
   protected
   def parse_script_and_add_parameter
-    base_script = self.testcase.script
+    base_script = self.testcase.scripts.script.first
     case base_script
      #parse the domain name from the email address
     when /~domain/

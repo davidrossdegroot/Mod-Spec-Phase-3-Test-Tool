@@ -1,0 +1,16 @@
+      <div class="controls" >
+        <%= f.label :script, "Script" %>
+        <%= f.text_field :script %>
+        <p class="help-block">Each script will contain a variable for a domain name, an email address, or an email formatted as a domain name.
+            If the script requires a DNS formatted email address, please use "~dnsemail". 
+            If the script requires just the domain name, use "~domain". If the script requires the 
+            full email address, use "~email". Example script for a domain name: "dig ~domain"</p>
+        <%= f.label :expectedResult, "Expected Result" %>
+        <%= f.text_field :expectedResult %><br />
+            <p class="help-block">Enter a string that the command line response must 
+        contain to make the script pass.</p>
+        <%= f.hidden_field :_destroy %>
+        <%= link_to_function "Remove", "remove_fields(this)" %>
+        </div>
+    
+    
