@@ -19,6 +19,14 @@
     </div>
 
      <div class="control-group">
+      <p class="help-block">A script may contain a variable for a domain name, an email address, or an email formatted as a domain name.
+            If the script requires a DNS formatted email address, please use "~dnsemail". 
+            If the script requires just the domain name, use "~domain". If the script requires the 
+            full email address, use "~email". Example script for a domain name: "dig ~domain". 
+            Further, if you would like to use the data returned in the previous command line
+            response, use "~last_response". </p>
+            <p class="control-group">For the Expected Response, enter a string that 
+        the command line response must contain to make the script pass.</p>
       <%= f.fields_for :scripts do |builder| %>
       <%= render 'script_fields', :f => builder %>
       <% end %>

@@ -6,7 +6,9 @@ class Query < ActiveRecord::Base
     
   protected
   def parse_script_and_add_parameter
-    base_script = self.testcase.scripts.script.first
+    @testcase = self.testcase
+    @script = Script.where(:testcase_id => @testcase.id).first
+    base_script = 
     case base_script
      #parse the domain name from the email address
     when /~domain/
