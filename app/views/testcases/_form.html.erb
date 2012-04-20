@@ -24,9 +24,10 @@
             If the script requires just the domain name, use "~domain". If the script requires the 
             full email address, use "~email". Example script for a domain name: "dig ~domain". 
             Further, if you would like to use the data returned in the previous command line
-            response, use "~last_response". </p>
+            response, use "~last_response". </p><br />
             <p class="control-group">For the Expected Response, enter a string that 
-        the command line response must contain to make the script pass.</p>
+            the command line response must contain to make the script pass. If the response should contain the 
+            certificate use "~certificate".</p>
       <%= f.fields_for :scripts do |builder| %>
       <%= render 'script_fields', :f => builder %>
       <% end %>
