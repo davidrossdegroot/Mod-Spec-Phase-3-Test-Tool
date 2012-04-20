@@ -25,9 +25,11 @@
             full email address, use "~email". Example script for a domain name: "dig ~domain". 
             Further, if you would like to use the data returned in the previous command line
             response, use "~last_response". </p><br />
-            <p class="control-group">For the Expected Response, enter a string that 
+            <p class="help-block">For the Expected Response, enter a string that 
             the command line response must contain to make the script pass. If the response should contain the 
-            certificate use "~certificate".</p>
+            certificate use "~certificate".</p> <br />
+            <p class="help-block">Finally, their must be one empty script row after the last script is run. This way the system
+               knows that it has no more conditions to meet.</p>
       <%= f.fields_for :scripts do |builder| %>
       <%= render 'script_fields', :f => builder %>
       <% end %>
